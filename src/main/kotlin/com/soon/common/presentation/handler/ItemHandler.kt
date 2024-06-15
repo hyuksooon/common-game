@@ -6,6 +6,7 @@ import com.soon.common.application.util.coroutines.ApplicationDispatchers
 import com.soon.common.presentation.extension.extractServiceCodeHeader
 import com.soon.common.presentation.extension.intQueryParam
 import com.soon.common.presentation.handler.model.ItemCreateRequest
+import com.soon.common.presentation.handler.model.ItemGetResponse
 import kotlinx.coroutines.withContext
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.server.*
@@ -26,6 +27,7 @@ class ItemHandler(
 
     suspend fun getItem(request: ServerRequest): ServerResponse = withContext(ApplicationDispatchers.IO) {
         val itemNo = request.intQueryParam("itemNo")
-        ServerResponse.ok().bodyValueAndAwait(itemQueryService.getItem(itemNo))
+        val summary = itemQueryService.getItem(itemNo)
+        ServerResponse.ok().bodyValueAndAwait(ItemGetResponse.of(summary))
     }
 }

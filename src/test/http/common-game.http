@@ -5,7 +5,8 @@ Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
 
 {
   "title": "title",
-  "description": "description"
+  "description": "description",
+  "thumbnail": "thumbnail"
 }
 
 ### 아이템 조회

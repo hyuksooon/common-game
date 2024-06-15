@@ -20,6 +20,9 @@ class Item(
 
         @Column(name = "description")
         val description: String,
+
+        @Column(name = "thumbnail")
+        val thumbnail: String,
 ) {
     @Column(name = "created_at")
     val createdAt: LocalDateTime = LocalDateTime.now()
@@ -29,6 +32,7 @@ class Item(
                 serviceNo = createModel.serviceNo,
                 title = createModel.title,
                 description = createModel.description,
+                thumbnail = createModel.thumbnail,
         )
     }
 }
