@@ -12,14 +12,3 @@ val boundedElasticDispatcher= Schedulers.boundedElastic().asCoroutineDispatcher(
 
 val boundedElasticScope:CoroutineScope
     get()= CoroutineScope(boundedElasticDispatcher)
-
-suspend fun <T> TransactionTemplate.executeWithContext(
-        context: CoroutineContext= boundedElasticDispatcher,
-        readOnly: Boolean=false,
-        block:CoroutineScope.() -> T,
-): T= withContext(context){
-    this@executeWithContext.execute {
-        if(readOnly) TransactionSynchronizationManager.setCurrentTransactionReadOnly(true)
-        block()
-    } as T
-}

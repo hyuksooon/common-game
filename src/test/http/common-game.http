@@ -1,0 +1,9 @@
+### 아이템 생성
+POST localhost:8083/common/backoffice/item
+Content-Type: application/json
+Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
+
+{
+  "title": "title",
+  "description": "description"
+}
