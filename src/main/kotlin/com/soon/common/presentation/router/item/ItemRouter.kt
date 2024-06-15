@@ -9,12 +9,11 @@ import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.coRouter
 
 @Configuration
-class ItemInternalRouter(private val itemHandler: ItemHandler) {
+class ItemRouter(private val itemHandler: ItemHandler) {
     @Bean
-    fun itemInternalRoute(): RouterFunction<ServerResponse> {
+    fun itemRoute(): RouterFunction<ServerResponse> {
         return coRouter {
-            (accept(MediaType.APPLICATION_JSON) and "/internal/common/item").nest {
-                POST("", itemHandler::createItem)
+            (accept(MediaType.APPLICATION_JSON) and "/common/item").nest {
                 GET("", itemHandler::getItem)
             }
         }
