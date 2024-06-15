@@ -15,6 +15,7 @@ class ItemInternalRouter(private val itemHandler: ItemHandler) {
         return coRouter {
             (accept(MediaType.APPLICATION_JSON) and "/internal/common/item").nest {
                 POST("", itemHandler::createItem)
+                GET("", itemHandler::getItem)
             }
         }
     }

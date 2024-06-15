@@ -1,5 +1,5 @@
 ### 아이템 생성
-POST localhost:8083/common/backoffice/item
+POST localhost:8083/internal/common/item
 Content-Type: application/json
 Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
 
@@ -7,3 +7,8 @@ Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
   "title": "title",
   "description": "description"
 }
+
+### 아이템 조회
+GET localhost:8083/internal/common/item?itemNo=1
+Content-Type: application/json
+Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
