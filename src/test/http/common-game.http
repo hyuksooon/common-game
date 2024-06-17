@@ -1,5 +1,5 @@
 ### 아이템 생성
-POST localhost:8083/internal/common/item
+POST localhost:8084/internal/common/item
 Content-Type: application/json
 Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
 
@@ -10,11 +10,11 @@ Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
 }
 
 ### 아이템 조회
-GET localhost:8083/internal/common/item?itemNo=1
+GET localhost:8084/internal/common/item?itemNo=1
 Content-Type: application/json
 Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
 
 ### 아이템 조회 (web)
-GET localhost:8083/common/item?itemNo=1
+GET localhost:8084/common/item?itemNo=1
 Content-Type: application/json
 Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
