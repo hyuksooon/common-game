@@ -1,6 +1,6 @@
 package com.soon.common.presentation.router.item
 
-import com.soon.common.presentation.handler.ItemHandler
+import com.soon.common.presentation.handler.item.ItemHandler
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.MediaType

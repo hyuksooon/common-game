@@ -1,0 +1,26 @@
+package com.soon.common.presentation.handler.commonLog
+
+import com.soon.common.application.commonLog.CommonLogCommandService
+import com.soon.common.application.util.coroutines.ApplicationDispatchers
+import com.soon.common.presentation.extension.extractServiceCodeHeader
+import com.soon.common.presentation.handler.commonLog.model.CommonLogInfoCreateRequest
+import kotlinx.coroutines.withContext
+import org.springframework.stereotype.Service
+import org.springframework.web.reactive.function.server.ServerRequest
+import org.springframework.web.reactive.function.server.ServerResponse
+import org.springframework.web.reactive.function.server.awaitBodyOrNull
+import org.springframework.web.reactive.function.server.buildAndAwait
+
+@Service
+class CommonLogHandler(
+        private val commonLogCommandService: CommonLogCommandService,
+) {
+    suspend fun createCommonLogInfo(request: ServerRequest): ServerResponse = withContext(ApplicationDispatchers.IO) {
+        val serviceHeader = request.extractServiceCodeHeader()
+        val command = request.awaitBodyOrNull<CommonLogInfoCreateRequest>()?.toCommand(serviceHeader.no)
+                ?: throw IllegalArgumentException()
+
+        commonLogCommandService.createCommonLogInfo(command)
+        ServerResponse.noContent().buildAndAwait()
+    }
+}

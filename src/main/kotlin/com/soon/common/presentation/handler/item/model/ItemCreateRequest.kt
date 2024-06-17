@@ -1,6 +1,6 @@
-package com.soon.common.presentation.handler.model
+package com.soon.common.presentation.handler.item.model
 
-import com.soon.common.application.model.ItemCreateCommand
+import com.soon.common.application.item.model.ItemCreateCommand
 import jakarta.validation.constraints.NotBlank
 
 data class ItemCreateRequest(

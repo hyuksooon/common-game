@@ -1,6 +1,6 @@
-package com.soon.common.presentation.router.item
+package com.soon.common.presentation.router.commonLog
 
-import com.soon.common.presentation.handler.item.ItemHandler
+import com.soon.common.presentation.handler.commonLog.CommonLogHandler
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.MediaType
@@ -9,13 +9,12 @@ import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.coRouter
 
 @Configuration
-class ItemInternalRouter(private val itemHandler: ItemHandler) {
+class CommonLogRouter(private val commonLogHandler: CommonLogHandler) {
     @Bean
-    fun itemInternalRoute(): RouterFunction<ServerResponse> {
+    fun commonLogRoute(): RouterFunction<ServerResponse> {
         return coRouter {
-            (accept(MediaType.APPLICATION_JSON) and "/internal/common/item").nest {
-                POST("", itemHandler::createItem)
-                GET("", itemHandler::getItem)
+            (accept(MediaType.APPLICATION_JSON) and "/common/commonLog").nest {
+                POST("info", commonLogHandler::createCommonLogInfo)
             }
         }
     }

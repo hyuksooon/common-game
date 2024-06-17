@@ -18,3 +18,18 @@ Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
 GET localhost:8084/common/item?itemNo=1
 Content-Type: application/json
 Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
+
+### 로그 정보 생성
+POST localhost:8084/common/commonLog/info
+Content-Type: application/json
+Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
+
+{
+  "logName": "logName",
+  "description": "description",
+  "intColumn1Name": "intColumn1Name",
+  "intColumn2Name": "intColumn2Name",
+  "doubleColumn1Name": "doubleColumn1Name",
+  "doubleColumn2Name": "doubleColumn2Name",
+  "dateTimeColumn1Name": "dateTimeColumn1Name"
+}
