@@ -15,6 +15,7 @@ class CommonLogRouter(private val commonLogHandler: CommonLogHandler) {
         return coRouter {
             (accept(MediaType.APPLICATION_JSON) and "/common/commonLog").nest {
                 POST("info", commonLogHandler::createCommonLogInfo)
+                GET("info", commonLogHandler::getCommonLogInfo)
             }
         }
     }

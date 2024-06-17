@@ -33,3 +33,8 @@ Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
   "doubleColumn2Name": "doubleColumn2Name",
   "dateTimeColumn1Name": "dateTimeColumn1Name"
 }
+
+### 로그 정보 조회
+GET localhost:8084/common/commonLog/info?commonLogInfoNo=1
+Content-Type: application/json
+Service-Code:eyJubyI6MSwidGl0bGUiOiJ0aXRsZSJ9
