@@ -1,5 +1,6 @@
 package com.soon.common.domain.commonLog
 
+import com.soon.common.domain.commonLog.model.CommonLogCreateModel
 import jakarta.persistence.*
 import java.time.LocalDateTime
 
@@ -11,8 +12,8 @@ class CommonLog(
         @Column(name = "common_log_no")
         val no: Int = 0,
 
-        @Column(name = "service_no")
-        val serviceNo: Int,
+        @Column(name = "common_log_info_no")
+        val commonLogInfoNo: Int,
 
         @Column(name = "int_column1")
         val intColumn1: Int?,
@@ -35,5 +36,15 @@ class CommonLog(
     @Column(name = "created_at")
     val createdAt: LocalDateTime = LocalDateTime.now()
 
-    companion object
+    companion object {
+        fun create(model: CommonLogCreateModel) = CommonLog(
+                commonLogInfoNo = model.commonLogInfoNo,
+                intColumn1 = model.intColumn1,
+                intColumn2 = model.intColumn2,
+                doubleColumn1 = model.doubleColumn1,
+                doubleColumn2 = model.doubleColumn2,
+                dateTimeColumn1 = model.dateTimeColumn1,
+                dateTimeColumn2 = model.dateTimeColumn2,
+        )
+    }
 }
