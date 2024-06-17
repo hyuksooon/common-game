@@ -6,16 +6,16 @@ import org.slf4j.LoggerFactory
 import kotlin.coroutines.AbstractCoroutineContextElement
 import kotlin.coroutines.CoroutineContext
 
-object GlobalCoroutineExceptionHandler: AbstractCoroutineContextElement(CoroutineExceptionHandler),
-        CoroutineExceptionHandler{
-        private val log = LoggerFactory.getLogger(javaClass)
+object GlobalCoroutineExceptionHandler : AbstractCoroutineContextElement(CoroutineExceptionHandler),
+        CoroutineExceptionHandler {
+    private val log = LoggerFactory.getLogger(javaClass)
 
-        override fun handleException(context: CoroutineContext, exception: Throwable) {
-                val name = context[CoroutineName]?.name ?: "coroutuine"
-                val description=context[CoroutineDescription]?.description
-                log.error("$name failed. : $description", exception)
-                for (suppressed in exception.suppressed) {
-                        log.error("$name has suppressed error",suppressed)
-                }
+    override fun handleException(context: CoroutineContext, exception: Throwable) {
+        val name = context[CoroutineName]?.name ?: "coroutine"
+        val description = context[CoroutineDescription]?.description
+        log.error("$name failed. : $description", exception)
+        for (suppressed in exception.suppressed) {
+            log.error("$name has suppressed error", suppressed)
         }
+    }
 }
