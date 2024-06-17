@@ -14,9 +14,6 @@ class CommonLog(
         @Column(name = "service_no")
         val serviceNo: Int,
 
-        @Column(name = "common_log_name")
-        val logName: String,
-
         @Column(name = "int_column1")
         val intColumn1: Int?,
 
