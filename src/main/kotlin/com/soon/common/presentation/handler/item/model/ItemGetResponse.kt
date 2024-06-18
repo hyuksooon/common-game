@@ -1,6 +1,6 @@
-package com.soon.common.presentation.handler.model
+package com.soon.common.presentation.handler.item.model
 
-import com.soon.common.application.model.ItemGetSummary
+import com.soon.common.application.item.model.ItemGetSummary
 
 data class ItemGetResponse(
         val itemNo: Int,

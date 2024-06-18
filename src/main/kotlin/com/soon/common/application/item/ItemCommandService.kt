@@ -1,6 +1,6 @@
-package com.soon.common.application
+package com.soon.common.application.item
 
-import com.soon.common.application.model.ItemCreateCommand
+import com.soon.common.application.item.model.ItemCreateCommand
 import com.soon.common.domain.item.Item
 import com.soon.common.domain.item.ItemRepository
 import org.springframework.stereotype.Service

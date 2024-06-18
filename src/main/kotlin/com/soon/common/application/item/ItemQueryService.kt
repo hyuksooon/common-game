@@ -1,6 +1,6 @@
-package com.soon.common.application
+package com.soon.common.application.item
 
-import com.soon.common.application.model.ItemGetSummary
+import com.soon.common.application.item.model.ItemGetSummary
 import com.soon.common.domain.item.ItemRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service

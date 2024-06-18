@@ -1,4 +1,4 @@
-package com.soon.common.application.model
+package com.soon.common.application.item.model
 
 import com.soon.common.domain.item.Item
 
