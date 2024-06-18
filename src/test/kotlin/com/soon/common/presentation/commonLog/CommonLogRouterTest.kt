@@ -82,7 +82,7 @@ class CommonLogRouterTest(private val context: ApplicationContext) {
                 .expectStatus().isOk
                 .expectBody().consumeWith(
                         document(
-                                "common-log",
+                                "common-log-create",
                                 resource(
                                         builder()
                                                 .tag("common-log")
